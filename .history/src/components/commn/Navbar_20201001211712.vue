@@ -1,0 +1,41 @@
+<template>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../../assets/logo.jpg" alt="">
+        </div>
+        <div></div>
+        <div>
+            <img src="../../assets/user.jpg" alt="">
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang='less' scoped>
+.navbar{
+    height: 12.5vw;
+    background-color: white;
+    display: flex;
+    div:nth-child(3){
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+.logo{
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 60%;
+    height: 100%;
+}
+</style>
