@@ -1,7 +1,7 @@
 <template>
 <div class="navbar">
     <div class="logo">
-        <img src="../../assets/logo.jpg" alt="" />
+        <img src="../../assets/logo.jpg" alt="">
     </div>
     <div>
         <p>
@@ -10,7 +10,7 @@
         </p>
     </div>
     <div>
-        <img style="border-radius:50%" :src="imgUrl" alt="" @click="$router.push('/edit')" />
+        <img src="../../assets/user.jpg" alt="">
         <p>下载app</p>
     </div>
 </div>
@@ -24,9 +24,9 @@ export default {
         }
     },
     async mounted() {
-        const res = await this.$http.get('/user/' + localStorage.getItem('id'));
-        this.imgUrl = res.data[0].user_img;
-    }
+        const res = this.$http.get('/user/' + localStorage.getItem('id'));
+        console.log(res)
+    },
 }
 </script>
 

@@ -1,15 +1,8 @@
 <template>
   <div>
-    <login-top middleTop="注册bilibili">
-      <div slot="right" @click="$router.push('/login')">切换登录</div>
+    <login-top middleTop="登录bilibili">
+        <div slot="right" @click="$router.push('/')">切换注册</div>
     </login-top>
-    <login-text
-      style="margin-top: 2vw"
-      label="姓名"
-      placeholder="请输入姓名"
-      rule="^.{6,16}$"
-      @inputChange="(res) => (model.name = res)"
-    ></login-text>
     <login-text
       label="账户"
       placeholder="请输入账户"
@@ -23,7 +16,7 @@
       rule="^.{6,16}$"
       @inputChange="(res) => (model.password = res)"
     ></login-text>
-    <login-btn @registerSubmit="registerSubmit" btntext="注册"></login-btn>
+    <login-btn @registerSubmit="registerSubmit" btntext="登录"></login-btn>
   </div>
 </template>
 
@@ -35,7 +28,6 @@ export default {
   data() {
     return {
       model: {
-        name: "",
         username: "",
         password: "",
       },
@@ -45,16 +37,19 @@ export default {
     async registerSubmit() {
       let rulg = /^.{6,16}$/;
       if (
-        rulg.test(this.model.name) &&
         rulg.test(this.model.username) &&
         rulg.test(this.model.password)
       ) {
-        const res = await this.$http.post("/register", this.model);
-        this.$msg.fail(res.data.msg);
-        localStorage.setItem('id',res.data.id);
-        localStorage.setItem('token',res.data.objtoken);
+        const res = await this.$http.post("/login", this.model);
+        this.$msg.fail(res.data.msg)
+        if(res.data.code == 301 || res.data.code == 302){
+          return
+        }
+        console.log(res);
+        localStorage.setItem('token',res.data.token);
+        localStorage.setItem('id',rs.data.id);
         setTimeout(() => {
-          this.$router.push('/userinfo');
+          this.$router.push('/userinfo')
         },1000)
         /*-------------------------------------------*/
       } else{
@@ -70,6 +65,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -16,14 +16,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
   },
   {
-    path: '/edit',
-    name: 'Edit',
-    meta:{
-      istoken:true
-    },
-    component: () => import(/* webpackChunkName: "about" */ '../views/Edit.vue')
-  },
-  {
     path: '/userinfo',
     name: 'userinfo',
     meta:{

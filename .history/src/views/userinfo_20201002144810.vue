@@ -3,7 +3,7 @@
         <navbar></navbar>
         <img src="../assets/back.jpg" alt="" class="backimg">
         <div>
-            <user-detail :userInfo='model'></user-detail>
+            <user-detail></user-detail>
         </div>
     </div>
 </template>
@@ -22,13 +22,11 @@ import userDetail from '../components/userComponent/userDetail.vue'
             userDetail
         },
         methods:{
-            async UserinfoData(){
-                 const res = await this.$http.get('/user/'+ localStorage.getItem('id'));
-                 console.log(res);
-                 this.model = res.data[0]
+            UserinfoData(){
+                console.log('进入页面');
             }
         },
-        created(){
+        created:{
             this.UserinfoData()
         }
     }

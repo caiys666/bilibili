@@ -18,9 +18,6 @@ const routes = [
   {
     path: '/edit',
     name: 'Edit',
-    meta:{
-      istoken:true
-    },
     component: () => import(/* webpackChunkName: "about" */ '../views/Edit.vue')
   },
   {

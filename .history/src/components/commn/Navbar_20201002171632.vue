@@ -10,7 +10,7 @@
         </p>
     </div>
     <div>
-        <img style="border-radius:50%" :src="imgUrl" alt="" @click="$router.push('/edit')" />
+        <img :src="imgUrl" alt="" />
         <p>下载app</p>
     </div>
 </div>

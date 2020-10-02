@@ -3,7 +3,7 @@
         <div>
             <div class="user-img">
                 <img :src="userInfo.user_img" alt="" v-if="userInfo.user_img">
-                <img v-else src="../../assets/user.jpg" alt="">
+                <img src="../../assets/user.jpg" alt="">
                 </div>
             <div class="user-edit">
                 <div>
@@ -20,15 +20,15 @@
                         <span class="user-text">获赞</span>
                     </p>
                 </div>
-                <div @click="$router.push('/edit')">
-                    <div class="user_editBtn" >编辑资料</div>
+                <div>
+                    <div class="user_editBtn">编辑资料</div>
                 </div>
             </div>
         </div>
         <div>
             <h2>{{userInfo.name}}</h2>
             <p v-if="userInfo.user_desc">{{userInfo.user_desc}}</p>
-            <p v-else>这个人很神秘，什么都没写</p>
+            <p>这个人很神秘，什么都没写</p>
         </div>
     </div>
     
@@ -36,7 +36,7 @@
 
 <script>
     export default {
-        props:['userInfo']
+        
     }
 </script>
 

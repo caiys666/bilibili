@@ -16,19 +16,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
   },
   {
-    path: '/edit',
-    name: 'Edit',
-    meta:{
-      istoken:true
-    },
-    component: () => import(/* webpackChunkName: "about" */ '../views/Edit.vue')
-  },
-  {
     path: '/userinfo',
     name: 'userinfo',
-    meta:{
-      istoken:true
-    },
     component: () => import(/* webpackChunkName: "about" */ '../views/userinfo.vue')
   },
   {
@@ -46,12 +35,11 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to,from,next) => {
-  if(!localStorage.getItem('token')&&!localStorage.getItem('id')&&to.meta.istoken==true){
-    router.push('/login');
-    Vue.prototype.$msg.fail('请重新登录！')
+  if(localStorage.getItem('token')&&localStorage.getItem('id')){
+    next();
     return
   }
-  next();
+  router.push('/login')
 })
 
 export default router

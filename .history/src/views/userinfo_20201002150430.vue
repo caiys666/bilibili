@@ -23,7 +23,11 @@ import userDetail from '../components/userComponent/userDetail.vue'
         },
         methods:{
             async UserinfoData(){
-                 const res = await this.$http.get('/user/'+ localStorage.getItem('id'));
+                 const res = await this.$http.get('/user/'+ localStorage.getItem('id'),{
+                     headers:{
+                         'Authorization':'Bearer ' + localStorage.getItem('token')
+                     }
+                 });
                  console.log(res);
                  this.model = res.data[0]
             }
