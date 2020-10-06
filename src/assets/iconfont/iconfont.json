@@ -1,0 +1,44 @@
+{
+  "id": "2077457",
+  "name": "vue-admin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3403035",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3494848",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "6697633",
+      "name": "评 论",
+      "font_class": "pinglun",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "10395341",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "8996430",
+      "name": "yibiaopan",
+      "font_class": "yibiaopan",
+      "unicode": "ec64",
+      "unicode_decimal": 60516
+    }
+  ]
+}
